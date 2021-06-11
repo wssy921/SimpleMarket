@@ -1,0 +1,30 @@
+server:
+ port: 8880
+
+input:
+ message:
+  location: /usr/test/kafka/input
+output:
+ message1:
+  location: /usr/test/kafka/output1
+ message2:
+  location: /usr/test/kafka/output2
+
+spring:
+ kafka:
+  bootstrap-servers: 192.168.126.128:9092
+  listener:
+    concurrency: 3
+  producer:
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    batch-size: 1000
+    
+
+kafka:
+ topics:
+   - name: tradeTopic
+     num-partitions: 3
+     replication-factor: 1
+ consumer:
+   bootstrap-servers: 192.168.126.128:9092

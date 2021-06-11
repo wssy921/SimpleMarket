@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true">
+    <property name="LOG_HOME" value="/var/log" />
+
+    <appender name="ConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d %-5p %t %logger:%L - %m%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="APPLOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/server.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_HOME}/server.log.%d{yyyyMMdd}.zip</fileNamePattern>
+        </rollingPolicy>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d %-5p %t %logger:%L - %m%n</pattern>
+        </layout>
+    </appender>
+    
+    <root level="WARN">
+        <appender-ref ref="ConsoleAppender" />
+        <appender-ref ref="APPLOGFILE" />
+    </root>
+    <logger name="com.hsbc" additivity="false" level="TRACE">
+        <appender-ref ref="ConsoleAppender" />
+        <appender-ref ref="APPLOGFILE" />
+    </logger>
+    
+</configuration>
