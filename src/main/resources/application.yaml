@@ -3,12 +3,12 @@ server:
 
 input:
  message:
-  location: classpath:input
+  location: /usr/test/kafka/input
 output:
  message1:
-  location: classpath:output1
+  location: /usr/test/kafka/output1
  message2:
-  location: classpath:output2
+  location: /usr/test/kafka/output2
 
 spring:
  kafka:

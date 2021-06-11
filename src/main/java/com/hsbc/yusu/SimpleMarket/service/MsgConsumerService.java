@@ -41,7 +41,7 @@ public class MsgConsumerService {
 	private String bootstrapServer;
 
 	@Async
-	@Scheduled(cron = "0 0/5 * * * ?")
+	@Scheduled(cron = "30 0/5 * * * ?")
 	public void consumer1() {
 		List<TopicConfigurations.Topic> topics = configurtion.getTopics();
 		List subTopic = topics.stream().map(TopicConfigurations.Topic::getName).collect(Collectors.toList());

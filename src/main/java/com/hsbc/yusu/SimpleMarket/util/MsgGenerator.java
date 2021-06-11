@@ -39,17 +39,6 @@ public class MsgGenerator {
 	private String consumer2OutputLocation;
 
 	public File getInputFolder() {
-		// ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-		// Resource resource = resolver.getResource(inputMessageLocation);
-		// File monitorFolder = null;
-		// try {
-		// monitorFolder = resource.getFile();
-		// if (!monitorFolder.isDirectory()) {
-		// monitorFolder.mkdirs();
-		// }
-		// } catch (IOException e) {
-		// log.error("get input file failed {}", e);
-		// }
 		File monitorFolder = new File(inputMessageLocation);
 		if (!monitorFolder.isDirectory()) {
 			monitorFolder.mkdirs();
@@ -84,8 +73,6 @@ public class MsgGenerator {
 	}
 
 	public void saveConsumerData(int type, String message) {
-		// ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-		// Resource resource = null;
 		File outputFolder = null;
 		String filePath = null;
 		if (type == 1) {
