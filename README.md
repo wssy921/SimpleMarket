@@ -61,3 +61,4 @@ Conums message content example:
 2021-06-11 14:34:00,045 INFO  task-8 com.hsbc.yusu.SimpleMarket.service.MsgConsumerService:89 - consumer_2 consumer data, the message is [{"tradeReference":"T17152","accountNumber":"1300218277","stockCode":"KO","quantity":"253.613232","currency":"USD","price":"327.37","broker":"B00123","amount":"83025.36","receivedTimestamp":"2021-06-11T14:29:20.216"}]
 ```
 
+https://www.zhihu.com/question/420024656/answer/1987598318499545555?share_code=1cWmjmWADLICb&utm_psn=1992241831111579424
